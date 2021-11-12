@@ -1,0 +1,489 @@
+
+@import url('https://www.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://www.googleapis.com/css2?family=Lato&display=swap');
+/*menu responsive*/
+@media only screen and (max-width: 78.75em){
+    .submenu .submenu .submenu{
+        left: 100%;
+        top: 0.5em;
+    }
+    .submenu{
+        min-width: 5em;
+    }
+}
+
+@media only screen and (max-width: 58.75em){
+    .menu li a{
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 30em){
+    header{
+        position: relative;
+        padding: 1.5em 2em;
+        width: 100%;
+    }
+    .menu{
+        flex-flow: column;
+        position: absolute;
+        background: var(--light);
+        top: 4.55em;
+        left: 0;
+        right: 0;
+        height: 100vh;
+
+        opacity: 0;
+        transform: scaleY(0);
+        transform-origin: top, center;
+        transition: 200ms transform cubic-bezier(0.36, 0.4, 0.42, 1.48) 100ms, 
+        100ms opacity ease-in-out;
+    }
+    .menu > li > a{
+        font-size: 1.5rem;
+        color: var(--dark);
+    }
+    .submenu > li > a{
+        font-size: 1.5rem;
+    }
+    .submenu{
+        top: 0;
+        padding-left: 1.5em;
+        border-left: 0.12em dotted hsla(342, 99%, 45%, 0.95)
+    }
+    .submenu .submenu{
+        left: 0;
+        top: 0;
+    }
+    .submenu .submenu .submenu{
+        left: 0;
+        top: 0;
+    }
+
+    .menu > li:hover > a + .submenu, 
+    .submenu > li:hover > a + .submenu{
+        position: relative;
+    }
+
+    .hamburger{
+        width: 2em;
+        height: 0.25em;
+        display: block;
+        background: var(--dark);
+        position: relative;
+        cursor: pointer;
+        
+    }
+
+    .hamburger::after, .hamburger::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        background: inherit;
+        width: inherit;
+        height: inherit;
+
+        transition: 0.2s transform ease-in-out;
+    }
+
+    .hamburger::after{
+        top: 0.65em;
+    }
+
+    .hamburger::before{
+        bottom: 0.65em;
+    }
+    
+    .close::after, .close::before{
+        top: 0;
+        transition: 0.2s transform ease-in-out;
+
+    }
+
+    .close::before{
+        display: none;
+    }
+
+    .close{
+        transform: rotate(45deg);
+    }
+    .close::after{
+        transform: rotate(-90deg);
+    }
+    /*reveal menu */
+    input[type="checkbox"]:checked + .menu{
+        position: absolute;
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+/*responsive max-width 48em */
+@media only screen and (min-width: 31em) and (max-width: 48em){
+    #right-topbar{
+        display: flex;
+        flex-direction: row;
+        margin-right: 1em;
+    }
+    .search-bar .form-control{
+        display: none;
+    }
+    i.fas.fa-search::before {
+        border-left: 1px solid #999;
+        padding-left: 1em;
+    }
+    .social-icons {
+        margin-left: 2em;
+    }
+    .fa-shopping-cart:after{
+        margin-right: 1em;
+    }
+    .fas.fa-shopping-cart {
+        margin-left: 1em;
+    }
+    /* #header-section .logo .logo-img{
+        width: 100%;
+        margin-left: 0.5em;
+    } */
+    #main .page-layout{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+    .hero-slider{
+        position: relative;
+        right: 0;
+        height: auto;
+    }
+    .hero-slider-content{
+        font-size: 0.5em;
+        position: relative;
+        top: -6em;
+        left: -1em;
+    }
+    .content-slider {
+        display: inline-block;
+        width: 25em;
+        height: 15em;
+        position: relative;
+        top: 15em;
+        left: 15em;
+        margin-bottom: 20em;
+    }
+    .category {
+        padding-bottom: 0.5em;
+        margin: 0;
+        padding-top: 4em;
+    }
+    .slider-title {
+        font-size: 1rem;
+        font-family: "Playfair Display";
+    }
+    .slider-btn{
+        display: none;
+    }
+    .btngrid {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2em;
+        margin-bottom: 2em;
+        min-width: 33%;
+        max-width: 100%;
+        height: auto;
+    }
+    .btngrid .btngrid1{
+        background-image: url(https://solopine.com/rosemary/wp-content/uploads/2015/03/post8-520x400.jpg);
+        width: 40em;
+        height: 50em;
+        margin: 1em 0;
+        border: 1px solid white;
+    }
+    .btngrid .btngrid1 a {
+        overflow-wrap: break-word;
+        text-align: center;
+        font-weight: 500;
+        font-family: "Lato";
+        text-shadow: 0 0 #424242;
+        color: #424242;
+    }
+    #main-content .container{
+        display: flex;
+        flex-direction: column;
+        padding: 0 0 0 1em;
+        width: 32em;
+    }
+    #main-layout {
+        width: 100%;
+    }
+    #feature-post {
+        margin: 2em 0 1em 1em;
+    }
+    .feature-post-excerpt{
+        margin: 1em 0;
+        text-align: left;
+    }
+    .feature-post-excerpt p{
+        line-height: 24px;
+        font-size: 14px;
+        font-family: "Lato", sans-serif;
+    }
+    #share-section{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .rowcol .row{
+        display: flex;
+        flex-direction: row;
+    }
+    .rowcol .column{
+        margin-left: 0.5em;
+    }
+    .column a.category{
+        margin-top: 0.1em;
+        padding-top: 2em;
+    }
+    #recent-post-grid .post-excerpt {
+        text-align: left;
+        margin-top: 1em;
+        font-family: "Lato";
+        line-height: 24px;
+        font-size: 14px;
+    }
+    #recent-post-grid .post-date {
+        text-align: left;
+        margin-bottom: 2em;
+    }
+    /*sidebar respon */
+    #sidebar{
+        margin-top: 5em;
+        width: 100%;
+        height: auto;
+    }
+    .section-title h4 {
+        text-transform: uppercase;
+        font-size: 10px;
+        padding: 1.5em 0;
+    }
+    #news-section {
+        width: 30em;
+        clear: both;
+        border: 1px solid #efefef;
+        padding: 0.5em;
+        text-align: center;
+        background-color: #efefef;
+    }
+    .rowcol .column {
+        margin-right: 0.5em;
+    }
+    .column .grid-img {
+        width: 9em;
+        height: 9em;
+        margin-bottom: 1em;
+    }
+    .facebook .fb-page {
+        padding: 0;
+    }
+    .cat-item a {
+        padding: 0 0.5em;
+    }
+    .hamburger{
+        left: -1em;  
+    }
+    /*Footer*/
+    .footer-gallery {
+        width: 10em;
+        height: 4em;
+    }
+    .footer-copyright {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 1em;
+    }
+}
+
+/*max-width 30em */
+@media only screen and (min-width: 17.5em) and (max-width: 30em){
+    #right-topbar{
+        display: flex;
+        flex-direction: row;
+        margin-right: 1em;
+    }
+    .search-bar .form-control{
+        display: none;
+    }
+    i.fas.fa-search::before {
+        border-left: 1px solid #999;
+        padding-left: 1em;
+    }
+    .social-icons {
+        margin-left: 2em;
+    }
+    .fa-shopping-cart:after{
+        margin-right: 1em;
+    }
+    .fas.fa-shopping-cart {
+        margin-left: 1em;
+    }
+    /*Logo*/
+    /* #header-section .logo .logo-img{
+        width: 100%;
+        margin-left: 0.5em;
+    } */
+    #main .page-layout{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+    .hero-slider{
+        position: relative;
+        right: 0;
+        height: auto;
+    }
+    .hero-slider-content{
+        font-size: 0.5em;
+        position: relative;
+        top: -6em;
+        left: -1em;
+    }
+    .content-slider {
+        display: inline-block;
+        width: 25em;
+        height: 15em;
+        position: relative;
+        top: 15em;
+        left: 15em;
+        margin-bottom: 20em;
+    }
+    .category {
+        padding-bottom: 0.5em;
+        margin: 0;
+        padding-top: 4em;
+    }
+    .slider-title {
+        font-size: 1rem;
+        font-family: "playfair display";
+    }
+    .post-date-slider {
+        display: none;
+    }
+    .slider-btn{
+        display: none;
+    }
+    .btngrid {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2em;
+        margin-bottom: 2em;
+        width: auto;
+        height: 35em;
+    }
+    .btngrid .btngrid1{
+        display: block;
+        margin: 2em 0 1em 1em;
+    }
+    .btngrid .btngrid1 a {
+        overflow-wrap: break-word;
+        text-align: center;
+        font-weight: 500;
+        font-family: "Lato";
+        text-shadow: 0 0 #424242;
+        color: #424242;
+    }
+    /*main content*/
+    #main-content .container{
+        display: flex;
+        flex-direction: column;
+        width: 31em;
+        padding: 0 0 0 1em;
+    }
+    /*Feature Post*/
+    #feature-post {
+        margin: 2em 0 1em 1em;
+    }
+    .feature-post-excerpt{
+        margin: 1em 0;
+        text-align: left;
+    }
+    /*Share*/
+    #share-section{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    /*recentpost*/
+    #recent-post-grid .rowcol{
+        display: flex;
+        flex-direction: column;
+    }
+    .rowcol .row{
+        display: flex;
+        flex-direction: column;
+    }
+    .column a.category{
+        margin-top: 0.1em;
+        padding-top: 2em;
+    }
+    #recent-post-grid .post-date {
+        text-align: left;
+        margin-bottom: 2em;
+    }
+    /*sidebar respon */
+    #sidebar{
+        margin-top: 5em;
+        width: 100%;
+        height: auto;
+    }
+    .section-title h4 {
+        text-transform: uppercase;
+        font-size: 10px;
+        padding: 1.5em 0;
+    }
+    #news-section {
+        clear: both;
+        border: 1px solid #efefef;
+        padding: 0.5em;
+        text-align: center;
+        background-color: #efefef;
+    }
+    .cat-list{
+        font-size: 1.2em;
+    }
+    .rowcol .column {
+        margin-right: 0.5em;
+    }
+    .column .grid-img {
+        width: 8em;
+        height: 5em;
+        margin-bottom: 1em;
+    }
+    .facebook .fb-page {
+        padding: 0;
+    }
+    .cat-item a {
+        padding: 0 0.5em;
+    }
+    .hamburger{
+        left: -1em;  
+    }
+    /*Footer*/
+    .footer-gallery {
+        width: 3.9em;
+        height: 4em;
+    }
+    .footer-copyright {
+        display: block;
+        margin-top: 1em;
+    }
+    p.copycontent {
+        text-align: left;
+        margin-bottom: 0.5em;
+    }
+    p.footer-link {
+        text-align: right;
+        margin-bottom: 0.5em;
+    }
+}
+
+
